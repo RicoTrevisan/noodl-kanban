@@ -1,0 +1,1542 @@
+{
+    "name": "kanbaan",
+    "components": [
+        {
+            "name": "/App",
+            "graph": {
+                "connections": [],
+                "roots": [
+                    {
+                        "id": "246f9453-a119-ac78-171e-3806cf596ecc",
+                        "type": "Group",
+                        "x": -111.4681915301291,
+                        "y": 311.4376377651178,
+                        "parameters": {
+                            "backgroundColor": "Grey - 100",
+                            "minHeight": {
+                                "value": 100,
+                                "unit": "vh"
+                            }
+                        },
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": [
+                            {
+                                "id": "a24a02ae-c1b8-1250-72c3-a1d48cbc9558",
+                                "type": "Router",
+                                "parameters": {
+                                    "name": "Main",
+                                    "pages": {
+                                        "routes": [
+                                            "/Start Page"
+                                        ],
+                                        "startPage": "/Start Page"
+                                    }
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": []
+                            }
+                        ]
+                    }
+                ],
+                "visualRoots": [
+                    "246f9453-a119-ac78-171e-3806cf596ecc"
+                ]
+            },
+            "metadata": {
+                "canvasSize": {
+                    "width": "1039px",
+                    "height": "751px"
+                },
+                "canvasPos": {
+                    "x": 0,
+                    "y": 0
+                }
+            }
+        },
+        {
+            "name": "/Start Page",
+            "id": "69559017-a17f-333b-c101-fbb0d1b4ce31",
+            "graph": {
+                "connections": [
+                    {
+                        "fromId": "45f85ebb-a641-e7ce-5f96-175f0b71328a",
+                        "fromProperty": "items",
+                        "toId": "531ced38-96c3-34e8-602f-bcd979e542c7",
+                        "toProperty": "items"
+                    },
+                    {
+                        "fromId": "a4b7e4d4-c01d-1267-30b6-c2b448b90067",
+                        "fromProperty": "didMount",
+                        "toId": "018abbbb-c200-21f5-a092-615bcfc5cf5b",
+                        "toProperty": "run"
+                    },
+                    {
+                        "fromId": "018abbbb-c200-21f5-a092-615bcfc5cf5b",
+                        "fromProperty": "out-done",
+                        "toId": "34b93b0d-2d81-c463-4997-e7c28a191341",
+                        "toProperty": "mounted"
+                    }
+                ],
+                "roots": [
+                    {
+                        "id": "a4b7e4d4-c01d-1267-30b6-c2b448b90067",
+                        "type": "Page",
+                        "x": 0,
+                        "y": 0,
+                        "parameters": {},
+                        "ports": [],
+                        "dynamicports": [
+                            {
+                                "name": "title",
+                                "displayName": "Title",
+                                "type": "string",
+                                "group": "General",
+                                "plug": "input",
+                                "default": "Start Page",
+                                "index": 14
+                            },
+                            {
+                                "name": "urlPath",
+                                "displayName": "Url Path",
+                                "type": "string",
+                                "group": "General",
+                                "plug": "input",
+                                "default": "start-page",
+                                "index": 15
+                            }
+                        ],
+                        "children": [
+                            {
+                                "id": "34b93b0d-2d81-c463-4997-e7c28a191341",
+                                "type": "Group",
+                                "parameters": {
+                                    "sizeMode": "contentHeight",
+                                    "rowGap": {
+                                        "value": 32,
+                                        "unit": "px"
+                                    },
+                                    "paddingTop": {
+                                        "value": 32,
+                                        "unit": "px"
+                                    },
+                                    "paddingLeft": {
+                                        "value": 16,
+                                        "unit": "px"
+                                    },
+                                    "paddingRight": {
+                                        "value": 16,
+                                        "unit": "px"
+                                    },
+                                    "paddingBottom": {
+                                        "value": 32,
+                                        "unit": "px"
+                                    },
+                                    "flexDirection": "row",
+                                    "mounted": false
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": [
+                                    {
+                                        "id": "531ced38-96c3-34e8-602f-bcd979e542c7",
+                                        "type": "For Each",
+                                        "label": "board",
+                                        "parameters": {
+                                            "template": "/Start Page/column"
+                                        },
+                                        "ports": [],
+                                        "dynamicports": [
+                                            {
+                                                "name": "inputMappingScript",
+                                                "type": {
+                                                    "name": "string",
+                                                    "codeeditor": "javascript"
+                                                },
+                                                "displayName": "Script",
+                                                "group": "Input Mapping",
+                                                "default": "// Here you add mappings between the properties of the item objects and the inputs of the components.\n// 'myComponentInput': 'myObjectProperty',\n// 'anotherComponentInput': function () { return object.get('someProperty') + ' ' + object.get('otherProp') }\n// These are the default mappings based on the selected template component.\nmap({\n})\n",
+                                                "plug": "input",
+                                                "index": 6
+                                            }
+                                        ],
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "10fa011a-db2f-e573-47e6-ed69e091fbc1",
+                        "type": "PageInputs",
+                        "x": -321,
+                        "y": -102,
+                        "parameters": {},
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": []
+                    },
+                    {
+                        "id": "45f85ebb-a641-e7ce-5f96-175f0b71328a",
+                        "type": "Static Data",
+                        "label": "columns",
+                        "x": -316.5,
+                        "y": 195.5,
+                        "parameters": {
+                            "csv": "status\nNot started\nDoing\nDone",
+                            "type": "json",
+                            "json": "[{\n    \"status\": \"Not started\",\n    \"tasks\": [\n  {\n    \"title\": \"Call the doctor\",\n    \"description\": \"Make an appointment to see the doctor\",\n    \"status\": \"Not started\",\n    \"id\": \"p7SeGBhmxc\"\n  },\n  {\n    \"title\": \"Buy groceries\",\n    \"description\": \"Get milk\",\n    \"status\": \" eggs\",\n    \"id\": \"lAbpkLuZtU\"\n  },\n  {\n    \"title\": \"Do laundry\",\n    \"description\": \"Wash and dry clothes\",\n    \"status\": \"Not started\",\n    \"id\": \"WwcYHaioUC\"\n  },\n  {\n    \"title\": \"Clean the house\",\n    \"description\": \"Vacuum\",\n    \"status\": \" dust\",\n    \"id\": \"zb18MKVBom\"\n  },\n  {\n    \"title\": \"Take out the trash\",\n    \"description\": \"Put the trash in the dumpster\",\n    \"status\": \"Not started\",\n    \"id\": \"2OeS4FEQ7B\"\n  },\n  {\n    \"title\": \"Pay bills\",\n    \"description\": \"Pay the electric bill\",\n    \"status\": \"Not started\",\n    \"id\": \"oEqrp7XZ4J\"\n  },\n  {\n    \"title\": \"Get a haircut\",\n    \"description\": \"Schedule an appointment at the salon\",\n    \"status\": \"Not started\",\n    \"id\": \"2j01iBLAty\"\n  },\n  {\n    \"title\": \"Go to the gym\",\n    \"description\": \"Work out for 30 minutes\",\n    \"status\": \"Not started\",\n    \"id\": \"wK9XY9sxjS\"\n  },\n  {\n    \"title\": \"Get a massage\",\n    \"description\": \"Relax and de-stress\",\n    \"status\": \"Not started\",\n    \"id\": \"JY04RAsOPr\"\n  },\n  {\n    \"title\": \"Go for a walk\",\n    \"description\": \"Enjoy the fresh air and sunshine\",\n    \"status\": \"Not started\",\n    \"id\": \"wgMmfgJsmo\"\n  },\n  {\n    \"title\": \"Read a book\",\n    \"description\": \"Get lost in a good story\",\n    \"status\": \"Not started\",\n    \"id\": \"hTzk7BPAcV\"\n  },\n  {\n    \"title\": \"Watch a movie\",\n    \"description\": \"Catch up on the latest blockbuster\",\n    \"status\": \"Not started\",\n    \"id\": \"9Y9ukIOhos\"\n  },\n  {\n    \"title\": \"Cook dinner\",\n    \"description\": \"Make a delicious meal\",\n    \"status\": \"Not started\",\n    \"id\": \"veCzewWyM0\"\n  },\n  {\n    \"title\": \"Bake a cake\",\n    \"description\": \"Satisfy your sweet tooth\",\n    \"status\": \"Not started\",\n    \"id\": \"lnDkq1cLrx\"\n  },\n  {\n    \"title\": \"Go for a run\",\n    \"description\": \"Get some exercise\",\n    \"status\": \"Not started\",\n    \"id\": \"z3Sd8JgvlG\"\n  },\n  {\n    \"title\": \"Play a game\",\n    \"description\": \"Have some fun with friends or family\",\n    \"status\": \"Not started\",\n    \"id\": \"aXOwGbpDTq\"\n  },\n  {\n    \"title\": \"Take a nap\",\n    \"description\": \"Catch up on some sleep\",\n    \"status\": \"Not started\",\n    \"id\": \"iZMk3blofs\"\n  },\n  {\n    \"title\": \"Meditate\",\n    \"description\": \"Reduce stress and anxiety\",\n    \"status\": \"Not started\",\n    \"id\": \"HHiFNrvNOC\"\n  }\n]},\n{\n    \"status\": \"Doing\",\n    \"tasks\": []\n},\n{\n    \"status\": \"Done\",\n    \"tasks\": []\n}\n]"
+                        },
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": [],
+                        "metadata": {
+                            "merge": {
+                                "soureCodePorts": [
+                                    "json"
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "id": "018abbbb-c200-21f5-a092-615bcfc5cf5b",
+                        "type": "JavaScriptFunction",
+                        "x": -310.33333333333337,
+                        "y": 47,
+                        "parameters": {
+                            "functionScript": "try {\n    // Importing the necessary library\n    const { Sortable, MultiDrag } = await import('https://esm.sh/sortablejs');\n\n    // Mounting the MultiDrag plugin\n    Sortable.mount(new MultiDrag());\n\n    Noodl.Objects.Sortable = Sortable;\n    Outputs.Success();\n    Outputs.done = true;\n} catch (error) {\n    console.error(error);\n    Outputs.Failure();\n    Outputs.done = false;\n}\n"
+                        },
+                        "ports": [],
+                        "dynamicports": [
+                            {
+                                "name": "out-Success",
+                                "displayName": "Success",
+                                "plug": "output",
+                                "type": "signal",
+                                "group": "Outputs",
+                                "index": 4
+                            },
+                            {
+                                "name": "out-Failure",
+                                "displayName": "Failure",
+                                "plug": "output",
+                                "type": "signal",
+                                "group": "Outputs",
+                                "index": 5
+                            },
+                            {
+                                "name": "out-done",
+                                "displayName": "done",
+                                "plug": "output",
+                                "type": "*",
+                                "group": "Outputs",
+                                "index": 6
+                            }
+                        ],
+                        "children": [],
+                        "metadata": {
+                            "merge": {
+                                "soureCodePorts": [
+                                    "functionScript"
+                                ]
+                            }
+                        }
+                    }
+                ],
+                "visualRoots": [
+                    "a4b7e4d4-c01d-1267-30b6-c2b448b90067"
+                ]
+            }
+        },
+        {
+            "name": "/Start Page/column",
+            "id": "1cd22539-927e-e176-f17b-1e6d19ed99df",
+            "graph": {
+                "connections": [
+                    {
+                        "fromId": "3975c974-7784-053a-5672-11c6acd79921",
+                        "fromProperty": "prop-status",
+                        "toId": "00cd0cef-0282-2b3a-77f0-40fa42657cea",
+                        "toProperty": "text"
+                    },
+                    {
+                        "fromId": "3975c974-7784-053a-5672-11c6acd79921",
+                        "fromProperty": "prop-tasks",
+                        "toId": "d23ef2f6-a8f6-aeda-864a-86bb6773a649",
+                        "toProperty": "items"
+                    },
+                    {
+                        "fromId": "004522cd-9a7a-6a91-8b1d-45661098009d",
+                        "fromProperty": "didMount",
+                        "toId": "eacb2f5a-161b-909e-e2d9-8fb74e56d052",
+                        "toProperty": "run"
+                    },
+                    {
+                        "fromId": "d2c261f2-4b91-73b6-99a1-dd8262c80563",
+                        "fromProperty": "this",
+                        "toId": "eacb2f5a-161b-909e-e2d9-8fb74e56d052",
+                        "toProperty": "in-div"
+                    }
+                ],
+                "roots": [
+                    {
+                        "id": "004522cd-9a7a-6a91-8b1d-45661098009d",
+                        "type": "Group",
+                        "label": "column",
+                        "x": 250,
+                        "y": 0,
+                        "parameters": {
+                            "rowGap": {
+                                "value": 16,
+                                "unit": "px"
+                            },
+                            "sizeMode": "contentHeight",
+                            "maxWidth": {
+                                "value": 360,
+                                "unit": "px"
+                            }
+                        },
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": [
+                            {
+                                "id": "2947a8db-3cde-6556-c6c2-cefe5c9c033f",
+                                "type": "Group",
+                                "label": "table header",
+                                "parameters": {
+                                    "sizeMode": "contentHeight",
+                                    "position": "sticky",
+                                    "zIndex": 2,
+                                    "backgroundColor": "Grey - 200",
+                                    "styleCss": "top: 0;"
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": [
+                                    {
+                                        "id": "00cd0cef-0282-2b3a-77f0-40fa42657cea",
+                                        "type": "Text",
+                                        "parameters": {
+                                            "textStyle": "Title Medium",
+                                            "text": "Todo",
+                                            "textAlignX": "center"
+                                        },
+                                        "ports": [],
+                                        "dynamicports": [],
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "d2c261f2-4b91-73b6-99a1-dd8262c80563",
+                                "type": "Group",
+                                "label": "tasks_wrapper",
+                                "parameters": {
+                                    "paddingLeft": {
+                                        "value": 16,
+                                        "unit": "px"
+                                    },
+                                    "paddingRight": {
+                                        "value": 16,
+                                        "unit": "px"
+                                    },
+                                    "cssClassName": "draggable-group",
+                                    "rowGap": {
+                                        "value": 8,
+                                        "unit": "px"
+                                    }
+                                },
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": [
+                                    {
+                                        "id": "d23ef2f6-a8f6-aeda-864a-86bb6773a649",
+                                        "type": "For Each",
+                                        "label": "tasks",
+                                        "parameters": {
+                                            "template": "/Start Page/column/items"
+                                        },
+                                        "ports": [],
+                                        "dynamicports": [
+                                            {
+                                                "name": "inputMappingScript",
+                                                "type": {
+                                                    "name": "string",
+                                                    "codeeditor": "javascript"
+                                                },
+                                                "displayName": "Script",
+                                                "group": "Input Mapping",
+                                                "default": "// Here you add mappings between the properties of the item objects and the inputs of the components.\n// 'myComponentInput': 'myObjectProperty',\n// 'anotherComponentInput': function () { return object.get('someProperty') + ' ' + object.get('otherProp') }\n// These are the default mappings based on the selected template component.\nmap({\n})\n",
+                                                "plug": "input",
+                                                "index": 6
+                                            }
+                                        ],
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3975c974-7784-053a-5672-11c6acd79921",
+                        "type": "Model2",
+                        "x": -37.83333333333337,
+                        "y": 18.166666666666657,
+                        "parameters": {
+                            "idSource": "foreach",
+                            "properties": "status,tasks"
+                        },
+                        "ports": [],
+                        "dynamicports": [
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Properties",
+                                "name": "prop-status",
+                                "displayName": "status",
+                                "index": 7
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "output",
+                                "group": "Changed Events",
+                                "displayName": "status Changed",
+                                "name": "changed-status",
+                                "index": 8
+                            },
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Properties",
+                                "name": "prop-tasks",
+                                "displayName": "tasks",
+                                "index": 9
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "output",
+                                "group": "Changed Events",
+                                "displayName": "tasks Changed",
+                                "name": "changed-tasks",
+                                "index": 10
+                            }
+                        ],
+                        "children": []
+                    },
+                    {
+                        "id": "eacb2f5a-161b-909e-e2d9-8fb74e56d052",
+                        "type": "JavaScriptFunction",
+                        "label": "Sortable List Creation",
+                        "x": -48,
+                        "y": 194,
+                        "parameters": {
+                            "functionScript": "const Sortable = Noodl.Objects.Sortable\n\n// Getting the list from the Inputs\nconst list = Inputs.div.getDOMElement();\n\n// Check if list is not null or undefined\nif (!list) {\n    Outputs.Failure();\n    throw new Error('List is not defined');\n}\n\n// Creating a new Sortable instance\nconst sortable = Sortable.create(list, {\n    group: \"tasks\",\n    animation: 150,\n    multiDrag: true,\n    selectedClass: \"sortable-selected\",\n    ghostClass: 'blue-background-class',\n    dragClass: \"sortable-drag\",\n    swapThreshold: 0.87,\n\n    store: {\n        get: function (sortable) {\n            var order = localStorage.getItem(sortable.options.group.name);\n            return order ? order.split('|') : [];\n        },\n\n        set: function (sortable) {\n            var order = sortable.toArray();\n            localStorage.setItem(sortable.options.group.name, order.join('|'));\n        }\n    },\n\n    onEnd: function(evt) {\n        var item = evt.item;  // dragged HTMLElement\n        Outputs.newSort = this.toArray();\n        Outputs.Sorted();\n    }\n});\n\n// Check if sortable is not null or undefined\nif (!sortable) {\n    Outputs.Failure();\n    throw new Error('Sortable instance could not be created');\n}\n\nOutputs.Success();\n"
+                        },
+                        "ports": [],
+                        "dynamicports": [
+                            {
+                                "name": "in-div",
+                                "displayName": "div",
+                                "plug": "input",
+                                "type": "*",
+                                "group": "Inputs",
+                                "index": 4
+                            },
+                            {
+                                "name": "out-Failure",
+                                "displayName": "Failure",
+                                "plug": "output",
+                                "type": "signal",
+                                "group": "Outputs",
+                                "index": 5
+                            },
+                            {
+                                "name": "out-Sorted",
+                                "displayName": "Sorted",
+                                "plug": "output",
+                                "type": "signal",
+                                "group": "Outputs",
+                                "index": 6
+                            },
+                            {
+                                "name": "out-Success",
+                                "displayName": "Success",
+                                "plug": "output",
+                                "type": "signal",
+                                "group": "Outputs",
+                                "index": 7
+                            },
+                            {
+                                "name": "out-newSort",
+                                "displayName": "newSort",
+                                "plug": "output",
+                                "type": "*",
+                                "group": "Outputs",
+                                "index": 8
+                            }
+                        ],
+                        "children": [],
+                        "metadata": {
+                            "prompt": {
+                                "history": [
+                                    {
+                                        "content": "could you troubleshoot this function? // Importing the necessary library const { Sortable, MultiDrag } = await import('https://esm.sh/sortablejs');  Sortable.mount(new MultiDrag());  const list = Inputs.div.getDOMElement(); const status = Inputs.status  Sortable.create(list, { \tgroup: \"tasks\",     animation: 150, \tmultiDrag: true, \tselectedClass: \"sortable-selected\",     ghostClass: 'blue-background-class', \tdragClass: \"sortable-drag\",     swapThreshold: 0.87,     // store: { \t// \t/** \t// \t * Get the order of elements. Called once during initialization. \t// \t * @param   {Sortable}  sortable \t// \t * @returns {Array} \t// \t */ \t// \tget: function (sortable) { \t// \t\tconsole.log(\"get function ran\", sortable.toArray()) \t// \t\tvar order = localStorage.getItem(sortable.options.group.name); \t// \t\treturn order ? order.split('|') : []; \t// \t},  \t// \t/** \t// \t * Save the order of elements. Called onEnd (when the item is dropped). \t// \t * @param {Sortable}  sortable \t// \t */ \t// \tset: function (sortable) { \t// \t\tconsole.log(\"save\", sortable.toArray() ) \t// \t\tvar order = sortable.toArray(); \t// \t\tlocalStorage.setItem(sortable.options.group.name, order.join('|')); \t// \t} \t// }, \t// Called by any change to the list (add / update / remove) \tonEnd: () => {  \t\tconsole.log(\"onEnd running. New array\", this.toArray()) \t\tOutputs.newSort = this.toArray(); \t\tOutputs.Sorted(); \t} });  // Noodl.Objects.sortable = sortable;",
+                                        "metadata": {
+                                            "user": {
+                                                "id": "c23589bc-2d97-43b8-94ed-23730032a3b4",
+                                                "email": "r@rico.wtf",
+                                                "name": "Rico Trevisan"
+                                            },
+                                            "code": "// Importing the necessary library\nconst { Sortable, MultiDrag } = await import('https://esm.sh/sortablejs');\n\n// Mounting the MultiDrag plugin\nSortable.mount(new MultiDrag());\n\n// Getting the list from the Inputs\nconst list = Inputs.div.getDOMElement();\n\n// Creating a new Sortable instance\nconst sortable = Sortable.create(list, {\n    group: \"tasks\",\n    animation: 150,\n    multiDrag: true,\n    selectedClass: \"sortable-selected\",\n    ghostClass: 'blue-background-class',\n    dragClass: \"sortable-drag\",\n    swapThreshold: 0.87,\n    // Called by any change to the list (add / update / remove)\n    onEnd: function() {\n        // 'this' refers to the sortable instance\n        console.log(\"onEnd running. New array\", this.toArray());\n        Outputs.newSort = this.toArray();\n        Outputs.Sorted();\n    }\n});\n\n// The 'this' keyword inside the onEnd function refers to the Sortable instance,\n// so we don't need to use an arrow function here. Arrow functions don't have their own 'this' context,\n// so 'this' inside an arrow function would refer to the parent scope, not the Sortable instance.\n"
+                                        },
+                                        "snowflakeId": "018b9ef2df23-zewp8z",
+                                        "type": "user"
+                                    },
+                                    {
+                                        "type": "assistant",
+                                        "content": "\nThis function creates a sortable list using the SortableJS library. It takes a DOM element from the <span style=\"color: var(--base-color-yellow-400);\">Inputs.div</span> input and creates a new Sortable instance with the specified options. The options include group name, animation speed, multi-drag capability, class names for selected, ghost, and drag elements, and swap threshold. \n\nWhen the list changes (add/update/remove), the onEnd function is called. This function logs the new array, sends it to the <span style=\"color: var(--base-color-yellow-400);\">Outputs.newSort</span> output, and triggers the <span style=\"color: var(--base-color-yellow-400);\">Outputs.Sorted</span> output signal. \n\nThe 'this' keyword inside the onEnd function refers to the Sortable instance, so we don't need to use an arrow function here. Arrow functions don't have their own 'this' context, so 'this' inside an arrow function would refer to the parent scope, not the Sortable instance.\n",
+                                        "snowflakeId": "018b9ef341f2-gd11bf",
+                                        "metadata": {}
+                                    },
+                                    {
+                                        "content": "this function is not working, could you review it and propose improvements?",
+                                        "metadata": {
+                                            "user": {
+                                                "id": "c23589bc-2d97-43b8-94ed-23730032a3b4",
+                                                "email": "r@rico.wtf",
+                                                "name": "Rico Trevisan"
+                                            },
+                                            "code": "// Importing the necessary library\nconst { Sortable, MultiDrag } = await import('https://esm.sh/sortablejs');\n\n// Mounting the MultiDrag plugin\nSortable.mount(new MultiDrag());\n\n// Getting the list from the Inputs\nconst list = Inputs.div.getDOMElement();\n\n// Check if list is not null or undefined\nif (!list) {\n    Outputs.Failure();\n    throw new Error('List is not defined');\n}\n\n// Creating a new Sortable instance\nconst sortable = Sortable.create(list, {\n    group: \"tasks\",\n    animation: 150,\n    multiDrag: true,\n    selectedClass: \"sortable-selected\",\n    ghostClass: 'blue-background-class',\n    dragClass: \"sortable-drag\",\n    swapThreshold: 0.87,\n\n    store: {\n        get: function (sortable) {\n            var order = localStorage.getItem(sortable.options.group.name);\n            return order ? order.split('|') : [];\n        },\n\n        set: function (sortable) {\n            var order = sortable.toArray();\n            localStorage.setItem(sortable.options.group.name, order.join('|'));\n        }\n    },\n\n    onEnd: function(evt) {\n        var item = evt.item;  // dragged HTMLElement\n        Outputs.newSort = this.toArray();\n        Outputs.Sorted();\n    }\n});\n\n// Check if sortable is not null or undefined\nif (!sortable) {\n    Outputs.Failure();\n    throw new Error('Sortable instance could not be created');\n}\n\nOutputs.Success();\n"
+                                        },
+                                        "snowflakeId": "018b9ef744d1-jusv4z",
+                                        "type": "user"
+                                    },
+                                    {
+                                        "type": "assistant",
+                                        "content": "\nThis function creates a sortable list using the Sortable.js library. \n\nIt takes a <span style=\"color: var(--base-color-yellow-400);\">Inputs.div</span> as an input, which is the DOM element where the sortable list will be created. The function then creates a new Sortable instance with various options such as group name, animation speed, multi-drag capability, and classes for selected, ghost, and drag states. \n\nThe function also includes a store object with get and set methods for saving and retrieving the order of the list items in local storage. \n\nWhen the sorting ends, the function updates the <span style=\"color: var(--base-color-yellow-400);\">Outputs.newSort</span> output with the new order of the list items and triggers the <span style=\"color: var(--base-color-yellow-400);\">Outputs.Sorted</span> output signal. \n\nIf the list or the sortable instance is not defined, the function triggers the <span style=\"color: var(--base-color-yellow-400);\">Outputs.Failure</span> output signal and throws an error. \n\nIf everything is successful, the function triggers the <span style=\"color: var(--base-color-yellow-400);\">Outputs.Success</span> output signal.\n",
+                                        "snowflakeId": "018b9ef7c883-ysobzs",
+                                        "metadata": {}
+                                    }
+                                ],
+                                "metadata": {
+                                    "templateId": "function"
+                                }
+                            },
+                            "AiAssistant": "old",
+                            "merge": {
+                                "soureCodePorts": [
+                                    "functionScript"
+                                ]
+                            }
+                        }
+                    }
+                ],
+                "visualRoots": [
+                    "004522cd-9a7a-6a91-8b1d-45661098009d"
+                ]
+            }
+        },
+        {
+            "name": "/Start Page/column/items",
+            "id": "29b96bc9-c487-336e-bb3d-76a813c6d88a",
+            "graph": {
+                "connections": [
+                    {
+                        "fromId": "241e9a17-9e54-febc-5361-53518951bb1c",
+                        "fromProperty": "prop-title",
+                        "toId": "4739bd7e-7a4e-3184-1302-cebf0225a822",
+                        "toProperty": "text"
+                    },
+                    {
+                        "fromId": "7e85a350-f8f1-514a-c8ad-eb68c9683aa1",
+                        "fromProperty": "didMount",
+                        "toId": "570cab48-c7cb-6d80-6a77-c14ae8f602eb",
+                        "toProperty": "run"
+                    },
+                    {
+                        "fromId": "7e85a350-f8f1-514a-c8ad-eb68c9683aa1",
+                        "fromProperty": "this",
+                        "toId": "570cab48-c7cb-6d80-6a77-c14ae8f602eb",
+                        "toProperty": "in-Group"
+                    },
+                    {
+                        "fromId": "241e9a17-9e54-febc-5361-53518951bb1c",
+                        "fromProperty": "id",
+                        "toId": "570cab48-c7cb-6d80-6a77-c14ae8f602eb",
+                        "toProperty": "in-id"
+                    }
+                ],
+                "roots": [
+                    {
+                        "id": "7e85a350-f8f1-514a-c8ad-eb68c9683aa1",
+                        "type": "Group",
+                        "x": 0,
+                        "y": 0,
+                        "parameters": {
+                            "sizeMode": "contentHeight",
+                            "paddingTop": {
+                                "value": 4,
+                                "unit": "px"
+                            },
+                            "paddingLeft": {
+                                "value": 8,
+                                "unit": "px"
+                            },
+                            "paddingRight": {
+                                "value": 8,
+                                "unit": "px"
+                            },
+                            "paddingBottom": {
+                                "value": 4,
+                                "unit": "px"
+                            },
+                            "backgroundColor": "White",
+                            "borderRadius": {
+                                "value": 6,
+                                "unit": "px"
+                            },
+                            "borderStyle": "solid",
+                            "borderWidth": {
+                                "value": 1,
+                                "unit": "px"
+                            },
+                            "borderColor": "Grey - 300"
+                        },
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": [
+                            {
+                                "id": "4739bd7e-7a4e-3184-1302-cebf0225a822",
+                                "type": "Text",
+                                "parameters": {},
+                                "ports": [],
+                                "dynamicports": [],
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": "241e9a17-9e54-febc-5361-53518951bb1c",
+                        "type": "Model2",
+                        "x": -263.5,
+                        "y": 44,
+                        "parameters": {
+                            "idSource": "foreach",
+                            "properties": "title"
+                        },
+                        "ports": [],
+                        "dynamicports": [
+                            {
+                                "type": {
+                                    "name": "*",
+                                    "allowConnectionsOnly": true
+                                },
+                                "plug": "input/output",
+                                "group": "Properties",
+                                "name": "prop-title",
+                                "displayName": "title",
+                                "index": 7
+                            },
+                            {
+                                "type": "signal",
+                                "plug": "output",
+                                "group": "Changed Events",
+                                "displayName": "title Changed",
+                                "name": "changed-title",
+                                "index": 8
+                            }
+                        ],
+                        "children": []
+                    },
+                    {
+                        "id": "570cab48-c7cb-6d80-6a77-c14ae8f602eb",
+                        "type": "JavaScriptFunction",
+                        "x": -266.25,
+                        "y": -86.5,
+                        "parameters": {
+                            "functionScript": "const group = Inputs.Group.getDOMElement();\nconst dataAttribute = 'id';\nconst dataValue = Inputs.id;\n\nOutputs.json = Noodl.Objects[Inputs.id]\ntry {\n  // Get the group element\n  const parsed = JSON.stringify(Noodl.Objects[Inputs.id])\n  // Add the data attribute to the group element\n  // group.setAttribute(`data-${dataAttribute}`, dataValue);\n  group.setAttribute(\"data-id\", parsed)\n  \n  Outputs.Success();\n} catch (error) {\n  Outputs.error = error;\n  Outputs.Failure();\n}\n"
+                        },
+                        "ports": [],
+                        "dynamicports": [
+                            {
+                                "name": "in-Group",
+                                "displayName": "Group",
+                                "plug": "input",
+                                "type": "*",
+                                "group": "Inputs",
+                                "index": 4
+                            },
+                            {
+                                "name": "in-id",
+                                "displayName": "id",
+                                "plug": "input",
+                                "type": "*",
+                                "group": "Inputs",
+                                "index": 5
+                            },
+                            {
+                                "name": "out-Success",
+                                "displayName": "Success",
+                                "plug": "output",
+                                "type": "signal",
+                                "group": "Outputs",
+                                "index": 6
+                            },
+                            {
+                                "name": "out-Failure",
+                                "displayName": "Failure",
+                                "plug": "output",
+                                "type": "signal",
+                                "group": "Outputs",
+                                "index": 7
+                            },
+                            {
+                                "name": "out-json",
+                                "displayName": "json",
+                                "plug": "output",
+                                "type": "*",
+                                "group": "Outputs",
+                                "index": 8
+                            },
+                            {
+                                "name": "out-error",
+                                "displayName": "error",
+                                "plug": "output",
+                                "type": "*",
+                                "group": "Outputs",
+                                "index": 9
+                            }
+                        ],
+                        "children": [],
+                        "metadata": {
+                            "merge": {
+                                "soureCodePorts": [
+                                    "functionScript"
+                                ]
+                            }
+                        }
+                    }
+                ],
+                "visualRoots": [
+                    "7e85a350-f8f1-514a-c8ad-eb68c9683aa1"
+                ]
+            }
+        }
+    ],
+    "settings": {
+        "bodyScroll": true,
+        "navigationPathType": "path"
+    },
+    "rootNodeId": "246f9453-a119-ac78-171e-3806cf596ecc",
+    "version": "4",
+    "metadata": {
+        "styles": {
+            "text": {
+                "Display": {
+                    "letterSpacing": "Auto",
+                    "lineHeight": {
+                        "value": "120",
+                        "unit": "%"
+                    },
+                    "textTransform": "none",
+                    "fontSize": {
+                        "value": "40",
+                        "unit": "px"
+                    },
+                    "fontFamily": "fonts/Roboto/Roboto-Regular.ttf",
+                    "color": "#000000"
+                },
+                "Headline": {
+                    "fontFamily": "fonts/Roboto/Roboto-Regular.ttf",
+                    "fontSize": {
+                        "value": "32",
+                        "unit": "px"
+                    },
+                    "color": "#000000",
+                    "letterSpacing": "Auto",
+                    "lineHeight": {
+                        "value": "120",
+                        "unit": "%"
+                    },
+                    "textTransform": "none"
+                },
+                "Title Large": {
+                    "fontFamily": "fonts/Roboto/Roboto-Bold.ttf",
+                    "fontSize": {
+                        "value": "24",
+                        "unit": "px"
+                    },
+                    "color": "#000000",
+                    "letterSpacing": "Auto",
+                    "lineHeight": {
+                        "value": "120%",
+                        "unit": "px"
+                    },
+                    "textTransform": "none"
+                },
+                "Title Medium": {
+                    "fontFamily": "fonts/Roboto/Roboto-Medium.ttf",
+                    "fontSize": {
+                        "value": "20",
+                        "unit": "px"
+                    },
+                    "color": "#000000",
+                    "letterSpacing": "Auto",
+                    "lineHeight": {
+                        "value": "120",
+                        "unit": "%"
+                    },
+                    "textTransform": "none"
+                },
+                "Title Small": {
+                    "fontFamily": "fonts/Roboto/Roboto-Bold.ttf",
+                    "fontSize": {
+                        "value": "16",
+                        "unit": "px"
+                    },
+                    "color": "#000000",
+                    "letterSpacing": "Auto",
+                    "lineHeight": {
+                        "value": "120",
+                        "unit": "%"
+                    },
+                    "textTransform": "none"
+                },
+                "Label Large": {
+                    "fontFamily": "fonts/Roboto/Roboto-Medium.ttf",
+                    "fontSize": {
+                        "value": "16",
+                        "unit": "px"
+                    },
+                    "color": "#000000",
+                    "letterSpacing": "Auto",
+                    "lineHeight": {
+                        "value": "120",
+                        "unit": "%"
+                    },
+                    "textTransform": "none"
+                },
+                "Label Medium": {
+                    "fontFamily": "fonts/Roboto/Roboto-Medium.ttf",
+                    "fontSize": {
+                        "value": "14",
+                        "unit": "px"
+                    },
+                    "color": "#000000",
+                    "letterSpacing": "Auto",
+                    "lineHeight": {
+                        "value": "120",
+                        "unit": "%"
+                    },
+                    "textTransform": "none"
+                },
+                "Label Small": {
+                    "fontFamily": "fonts/Roboto/Roboto-Medium.ttf",
+                    "fontSize": {
+                        "value": "12",
+                        "unit": "px"
+                    },
+                    "color": "#000000",
+                    "letterSpacing": "Auto",
+                    "lineHeight": {
+                        "value": "120",
+                        "unit": "%"
+                    },
+                    "textTransform": "none"
+                },
+                "Body Large": {
+                    "fontFamily": "fonts/Roboto/Roboto-Regular.ttf",
+                    "fontSize": {
+                        "value": "20",
+                        "unit": "px"
+                    },
+                    "color": "#000000",
+                    "letterSpacing": "Auto",
+                    "lineHeight": {
+                        "value": "150",
+                        "unit": "%"
+                    },
+                    "textTransform": "none"
+                },
+                "Body Medium": {
+                    "fontFamily": "fonts/Roboto/Roboto-Regular.ttf",
+                    "fontSize": {
+                        "value": "16",
+                        "unit": "px"
+                    },
+                    "color": "#000000",
+                    "letterSpacing": "Auto",
+                    "lineHeight": {
+                        "value": "150",
+                        "unit": "%"
+                    },
+                    "textTransform": "none"
+                },
+                "Body Small": {
+                    "letterSpacing": "Auto",
+                    "lineHeight": {
+                        "value": "150",
+                        "unit": "%"
+                    },
+                    "textTransform": "none",
+                    "fontFamily": "fonts/Roboto/Roboto-Regular.ttf",
+                    "fontSize": {
+                        "value": "14",
+                        "unit": "px"
+                    },
+                    "color": "#000000"
+                }
+            },
+            "colors": {
+                "Primary": "#5836F5",
+                "Primary Dark": "#3F22B8",
+                "Primary Subtle": "#C9BFFC",
+                "Primary Light": "#F7F5FF",
+                "Grey - 900": "#1F1F1F",
+                "Grey - 800": "#383838",
+                "Grey - 700": "#4C4C4C",
+                "Grey - 600": "#757575",
+                "Grey - 500": "#A5A5A5",
+                "Grey - 400": "#CECECE",
+                "Grey - 300": "#E9E9E9",
+                "Grey - 200": "#F4F4F4",
+                "Grey - 100": "#FBFBFB",
+                "Success": "#49AD7F",
+                "Notice": "#F2C441",
+                "Danger": "#F75A4F",
+                "White": "#FFFFFF",
+                "Black": "#000000"
+            }
+        }
+    },
+    "variants": [
+        {
+            "typename": "Text",
+            "parameters": {
+                "textStyle": "Body Medium"
+            },
+            "stateParamaters": {},
+            "stateTransitions": {}
+        },
+        {
+            "typename": "net.noodl.controls.button",
+            "parameters": {
+                "height": {
+                    "value": 40,
+                    "unit": "px"
+                },
+                "sizeMode": "contentWidth",
+                "backgroundColor": "Primary",
+                "iconIconSource": {
+                    "class": "material-icons",
+                    "code": "home"
+                },
+                "iconSpacing": {
+                    "value": 8,
+                    "unit": "px"
+                },
+                "borderRadius": {
+                    "value": 4,
+                    "unit": "px"
+                },
+                "textStyle": "Label Medium",
+                "paddingTop": {
+                    "value": 0,
+                    "unit": "px"
+                },
+                "paddingLeft": {
+                    "value": 24,
+                    "unit": "px"
+                },
+                "paddingRight": {
+                    "value": 24,
+                    "unit": "px"
+                },
+                "paddingBottom": {
+                    "value": 0,
+                    "unit": "px"
+                },
+                "color": "#FFFFFF",
+                "minWidth": {
+                    "value": 80,
+                    "unit": "px"
+                },
+                "useIcon": false,
+                "iconSize": {
+                    "value": 20,
+                    "unit": "px"
+                }
+            },
+            "stateParamaters": {
+                "hover": {
+                    "backgroundColor": "Primary Dark"
+                },
+                "pressed": {
+                    "backgroundColor": "Primary",
+                    "color": "White"
+                },
+                "disabled": {
+                    "backgroundColor": "Grey - 300",
+                    "color": "Grey - 600"
+                }
+            },
+            "stateTransitions": {},
+            "defaultStateTransitions": {
+                "neutral": {
+                    "curve": [
+                        0,
+                        0,
+                        0.58,
+                        1
+                    ],
+                    "dur": 0,
+                    "delay": 0
+                },
+                "hover": {
+                    "curve": [
+                        0,
+                        0,
+                        0.58,
+                        1
+                    ],
+                    "dur": 0,
+                    "delay": 0
+                },
+                "pressed": {
+                    "curve": [
+                        0,
+                        0,
+                        0.58,
+                        1
+                    ],
+                    "dur": 0,
+                    "delay": 0
+                }
+            }
+        },
+        {
+            "typename": "net.noodl.controls.textinput",
+            "parameters": {
+                "useLabel": true,
+                "sizeMode": "explicit",
+                "height": {
+                    "value": 40,
+                    "unit": "px"
+                },
+                "textStyle": "Body Medium",
+                "borderStyle": "solid",
+                "borderRadius": {
+                    "value": 4,
+                    "unit": "px"
+                },
+                "borderWidth": {
+                    "value": 1,
+                    "unit": "px"
+                },
+                "borderColor": "Grey - 700",
+                "labeltextStyle": "Label Small",
+                "paddingLeft": {
+                    "value": 12,
+                    "unit": "px"
+                },
+                "paddingRight": {
+                    "value": 8,
+                    "unit": "px"
+                },
+                "labelSpacing": {
+                    "value": 4,
+                    "unit": "px"
+                },
+                "placeholder": "Type here",
+                "color": "Grey - 900",
+                "placeHolderOpacity": 0.65,
+                "enabled": true,
+                "blockTouch": false,
+                "useIcon": false,
+                "iconIconSource": {
+                    "class": "material-icons",
+                    "code": "home"
+                },
+                "iconSize": {
+                    "value": 20,
+                    "unit": "px"
+                },
+                "iconSpacing": {
+                    "value": 4,
+                    "unit": "px"
+                },
+                "iconColor": "Grey - 700",
+                "labelcolor": "Grey - 700"
+            },
+            "stateParamaters": {
+                "hover": {
+                    "labelcolor": "Grey - 700",
+                    "borderColor": "Grey - 700",
+                    "borderStyle": "solid",
+                    "color": "Grey - 900"
+                },
+                "focused": {
+                    "borderColor": "Primary",
+                    "labelcolor": "Primary",
+                    "borderWidth": {
+                        "value": 1,
+                        "unit": "px"
+                    },
+                    "boxShadowEnabled": false,
+                    "boxShadowColor": "Primary",
+                    "borderStyle": "solid"
+                },
+                "disabled": {
+                    "labelcolor": "Grey - 500",
+                    "backgroundColor": "Grey - 200",
+                    "borderWidth": {
+                        "value": 1,
+                        "unit": "px"
+                    },
+                    "borderColor": "Grey - 500",
+                    "color": "Grey - 600"
+                }
+            },
+            "stateTransitions": {},
+            "defaultStateTransitions": {
+                "neutral": {
+                    "curve": [
+                        0,
+                        0,
+                        0.58,
+                        1
+                    ],
+                    "dur": 0,
+                    "delay": 0
+                },
+                "focused": {
+                    "curve": [
+                        0,
+                        0,
+                        0.58,
+                        1
+                    ],
+                    "dur": 0,
+                    "delay": 0
+                },
+                "hover": {
+                    "curve": [
+                        0,
+                        0,
+                        0.58,
+                        1
+                    ],
+                    "dur": 0,
+                    "delay": 0
+                },
+                "disabled": {
+                    "curve": [
+                        0,
+                        0,
+                        0.58,
+                        1
+                    ],
+                    "dur": 0,
+                    "delay": 0
+                }
+            }
+        },
+        {
+            "typename": "net.noodl.controls.options",
+            "parameters": {
+                "sizeMode": "explicit",
+                "height": {
+                    "value": 40,
+                    "unit": "px"
+                },
+                "borderWidth": {
+                    "value": 1,
+                    "unit": "px"
+                },
+                "borderRadius": {
+                    "value": 4,
+                    "unit": "px"
+                },
+                "borderColor": "Grey - 700",
+                "boxShadowColor": "Dark Gray",
+                "useIcon": true,
+                "iconIconSource": {
+                    "class": "material-icons",
+                    "code": "expand_more"
+                },
+                "iconPlacement": "right",
+                "iconSize": {
+                    "value": 20,
+                    "unit": "px"
+                },
+                "paddingRight": {
+                    "value": 12,
+                    "unit": "px"
+                },
+                "textStyle": "Body Medium",
+                "paddingLeft": {
+                    "value": 12,
+                    "unit": "px"
+                },
+                "marginTop": {
+                    "value": 0,
+                    "unit": "px"
+                },
+                "width": {
+                    "value": 100,
+                    "unit": "%"
+                },
+                "iconColor": "Grey - 700",
+                "placeholderOpacity": 0.65,
+                "placeholder": "Select option",
+                "useLabel": true,
+                "labelSpacing": {
+                    "value": 4,
+                    "unit": "px"
+                },
+                "labeltextStyle": "Label Small",
+                "labelcolor": "Grey - 700",
+                "items": "[\n    {\"Label\":\"Option 1\", \"Value\":\"1\"},\n    {\"Label\":\"Option 2\", \"Value\":\"2\"},\n    {\"Label\":\"Option 3\", \"Value\":\"3\"}\n]"
+            },
+            "stateParamaters": {
+                "hover": {
+                    "borderColor": "Grey - 700",
+                    "borderRadius": {
+                        "value": 4,
+                        "unit": "px"
+                    },
+                    "iconColor": "Grey - 900",
+                    "iconSize": {
+                        "value": 20,
+                        "unit": "px"
+                    },
+                    "iconPlacement": "right",
+                    "color": "Grey - 900",
+                    "labelcolor": "Grey - 700"
+                },
+                "focused": {
+                    "borderColor": "Primary",
+                    "boxShadowColor": "Primary",
+                    "borderRadius": {
+                        "value": 4,
+                        "unit": "px"
+                    },
+                    "useIcon": true,
+                    "iconColor": "Primary",
+                    "iconIconSource": {
+                        "class": "material-icons",
+                        "code": "keyboard_arrow_up"
+                    },
+                    "iconPlacement": "right",
+                    "color": "Grey - 900",
+                    "labelcolor": "Primary"
+                },
+                "pressed": {
+                    "borderRadius": {
+                        "value": 4,
+                        "unit": "px"
+                    }
+                },
+                "disabled": {
+                    "labelcolor": "Grey - 500",
+                    "iconColor": "Grey - 500",
+                    "borderColor": "Grey - 500",
+                    "color": "Grey - 600",
+                    "backgroundColor": "Grey - 200"
+                }
+            },
+            "stateTransitions": {},
+            "defaultStateTransitions": {
+                "neutral": {
+                    "curve": [
+                        0,
+                        0,
+                        0.58,
+                        1
+                    ],
+                    "dur": 0,
+                    "delay": 0
+                },
+                "focused": {
+                    "curve": [
+                        0,
+                        0,
+                        0.58,
+                        1
+                    ],
+                    "dur": 0,
+                    "delay": 0
+                },
+                "hover": {
+                    "curve": [
+                        0,
+                        0,
+                        0.58,
+                        1
+                    ],
+                    "dur": 0,
+                    "delay": 0
+                },
+                "pressed": {
+                    "curve": [
+                        0,
+                        0,
+                        0.58,
+                        1
+                    ],
+                    "dur": 0,
+                    "delay": 0
+                }
+            }
+        },
+        {
+            "typename": "net.noodl.controls.range",
+            "parameters": {
+                "thumbColor": "Primary",
+                "thumbBorderRadius": {
+                    "value": 100,
+                    "unit": "%"
+                },
+                "trackHeight": {
+                    "value": 4,
+                    "unit": "px"
+                },
+                "trackActiveColor": "Primary",
+                "trackColor": "Primary Subtle",
+                "width": {
+                    "value": 100,
+                    "unit": "%"
+                },
+                "trackBorderRadius": {
+                    "value": 100,
+                    "unit": "px"
+                },
+                "thumbHeight": {
+                    "value": 16,
+                    "unit": "px"
+                },
+                "thumbWidth": {
+                    "value": 16,
+                    "unit": "px"
+                }
+            },
+            "stateParamaters": {
+                "hover": {
+                    "thumbColor": "Primary Dark",
+                    "trackActiveColor": "Primary Dark"
+                },
+                "disabled": {
+                    "trackActiveColor": "Grey - 500",
+                    "trackColor": "Grey - 300",
+                    "thumbColor": "Grey - 500"
+                }
+            },
+            "stateTransitions": {}
+        },
+        {
+            "typename": "net.noodl.controls.checkbox",
+            "parameters": {
+                "width": {
+                    "value": 20,
+                    "unit": "px"
+                },
+                "height": {
+                    "value": 20,
+                    "unit": "px"
+                },
+                "useIcon": false,
+                "borderWidth": {
+                    "value": 1,
+                    "unit": "px"
+                },
+                "useLabel": true,
+                "labeltextStyle": "Body Medium",
+                "borderRadius": {
+                    "value": 2,
+                    "unit": "px"
+                },
+                "borderColor": "Grey - 700",
+                "labelfontSize": {
+                    "value": 16,
+                    "unit": "px"
+                },
+                "labelcolor": "Grey - 900",
+                "labelSpacing": {
+                    "value": 12,
+                    "unit": "px"
+                }
+            },
+            "stateParamaters": {
+                "checked": {
+                    "useIcon": true,
+                    "iconIconSource": {
+                        "class": "material-icons",
+                        "code": "check"
+                    },
+                    "backgroundColor": "Primary",
+                    "borderColor": "Primary",
+                    "iconSize": {
+                        "value": 16,
+                        "unit": "px"
+                    }
+                },
+                "disabled": {
+                    "opacity": 0.5
+                },
+                "hover": {
+                    "borderColor": "Grey - 700"
+                },
+                "pressed": {}
+            },
+            "stateTransitions": {},
+            "defaultStateTransitions": {
+                "neutral": {
+                    "curve": [
+                        0,
+                        0,
+                        0.58,
+                        1
+                    ],
+                    "dur": 0,
+                    "delay": 0
+                },
+                "hover": {
+                    "curve": [
+                        0,
+                        0,
+                        0.58,
+                        1
+                    ],
+                    "dur": 300,
+                    "delay": 0
+                },
+                "checked": {
+                    "curve": [
+                        0,
+                        0,
+                        0.58,
+                        1
+                    ],
+                    "dur": 0,
+                    "delay": 0
+                }
+            }
+        },
+        {
+            "typename": "net.noodl.controls.radiobutton",
+            "parameters": {
+                "width": {
+                    "value": 20,
+                    "unit": "px"
+                },
+                "height": {
+                    "value": 20,
+                    "unit": "px"
+                },
+                "useLabel": true,
+                "labeltextStyle": "Body Large",
+                "borderWidth": {
+                    "value": 1,
+                    "unit": "px"
+                },
+                "value": "0",
+                "useIcon": false,
+                "fillColor": "transparent",
+                "borderColor": "Grey - 700",
+                "labelfontSize": {
+                    "value": 16,
+                    "unit": "px"
+                },
+                "marginBottom": {
+                    "value": 8,
+                    "unit": "px"
+                },
+                "labelcolor": "Grey - 900",
+                "labelSpacing": {
+                    "value": 12,
+                    "unit": "px"
+                }
+            },
+            "stateParamaters": {
+                "checked": {
+                    "fillColor": "Primary",
+                    "borderColor": "Primary",
+                    "borderWidth": {
+                        "value": 1,
+                        "unit": "px"
+                    },
+                    "backgroundColor": "transparent",
+                    "width": {
+                        "value": 20,
+                        "unit": "px"
+                    },
+                    "height": {
+                        "value": 20,
+                        "unit": "px"
+                    },
+                    "fillSpacing": {
+                        "value": 2,
+                        "unit": "px"
+                    }
+                },
+                "hover": {
+                    "backgroundColor": "transparent",
+                    "borderColor": "Grey - 700",
+                    "width": {
+                        "value": 20,
+                        "unit": "px"
+                    },
+                    "height": {
+                        "value": 20,
+                        "unit": "px"
+                    }
+                },
+                "disabled": {
+                    "borderColor": "Grey - 500",
+                    "labelcolor": "Grey - 500",
+                    "fillColor": "transparent"
+                }
+            },
+            "stateTransitions": {},
+            "defaultStateTransitions": {
+                "neutral": {
+                    "curve": [
+                        0,
+                        0,
+                        0.58,
+                        1
+                    ],
+                    "dur": 0,
+                    "delay": 0
+                },
+                "hover": {
+                    "curve": [
+                        0,
+                        0,
+                        0.58,
+                        1
+                    ],
+                    "dur": 0,
+                    "delay": 0
+                },
+                "checked": {
+                    "curve": [
+                        0,
+                        0,
+                        0.58,
+                        1
+                    ],
+                    "dur": 0,
+                    "delay": 0
+                }
+            }
+        }
+    ]
+}
